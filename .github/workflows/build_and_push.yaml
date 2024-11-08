@@ -26,8 +26,9 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t prd-barkuni-repo:latest 058264138725.dkr.ecr.us-east-1.amazonaws.com/prd-barkuni-repo:prd-flask-app-1 .
+          docker build -t prd-barkuni-repo .
+          docker tag prd-barkuni-repo:latest 058264138725.dkr.ecr.us-east-1.amazonaws.com/prd-barkuni-repo:flask-app-1
 
       - name: Push to ECR
         run: |
-          docker push 058264138725.dkr.ecr.us-east-1.amazonaws.com/prd-barkuni-repo:prd-flask-app-1
+          docker push 058264138725.dkr.ecr.us-east-1.amazonaws.com/prd-barkuni-repo:flask-app-1
