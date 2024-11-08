@@ -69,8 +69,8 @@ resource "aws_launch_template" "eks_general" {
 # }
 
 resource "aws_eks_node_group" "general" {
-  cluster_name    = aws_eks_cluster.eks.name
-  version         = local.eks_version
+  cluster_name = aws_eks_cluster.eks.name
+  version      = local.eks_version
   # release_version = nonsensitive(data.aws_ssm_parameter.eks_ami_release_version.value)
   release_version = "1.31.0-20241024"
   node_group_name = "general"

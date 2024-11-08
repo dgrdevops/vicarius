@@ -33,3 +33,10 @@ resource "helm_release" "aws_load_balancer_controller" {
     aws_iam_role_policy_attachment.aws_load_balancer_controller_attach
   ]
 }
+
+resource "kubernetes_manifest" "flusk_app" {
+  for_each = fileset("../../../k8s/", "*.y*ml")
+  manifest = yamldecode(file("../../../k8s/${each.value}"))
+
+  depends_on = [helm_release.aws_load_balancer_controller]
+}
