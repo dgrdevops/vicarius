@@ -53,7 +53,7 @@ aws ec2 create-tags --resources ${instance_id} --tags Key=Name,Value=${env}-${na
 
 # github_pat="$(aws secretsmanager get-secret-value --secret-id ${env}-${name}-token --query SecretString --region us-east-1 --output text)"
 # exit_on_failure $? "Failed to query ${env}-${name} token from secrets manager"
-github_token=ASQFI5YZNZ4XJ6L7JBWSMNTHFY23O
+github_token=ASQFI53GRCX6XCOKVVNZ3JTHFZ37C
 
 github_repo_url="https://github.com/dgrdevops/vicarius"
 github_runner_version="2.320.0"

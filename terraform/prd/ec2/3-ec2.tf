@@ -56,7 +56,7 @@ resource "aws_instance" "gha_runner" {
   instance_type = "t3a.medium"
   key_name      = aws_key_pair.generated_key.key_name
   # subnet_id            = data.terraform_remote_state.vpc.outputs.private_subnet1_id
-  subnet_id = "subnet-0c36886c406ab1648"
+  subnet_id = "subnet-0460696ffc4572245"
   # iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
 
   tags = {
