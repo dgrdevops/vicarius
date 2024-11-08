@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # You can give it a name like 'kube-system-pod-reader'
+  # This will define the permissions.
+  # Make sure the name is unique.
+  name: kube-system-pod-reader
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["list"]
